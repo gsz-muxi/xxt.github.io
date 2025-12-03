@@ -26,3 +26,5 @@ jobs:
       
       - name: Run 线程.py
         run: python 线程.py 
+        env:
+             PORT: 3001  # 自定义端口
