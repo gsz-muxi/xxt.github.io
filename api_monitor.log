@@ -1,0 +1,61 @@
+2025-11-29 00:41:05,054 - INFO - Starting API monitoring...
+2025-11-29 00:41:05,055 - INFO - Started monitoring: Example API
+2025-11-29 00:41:15,862 - WARNING - Example API: FAILED - HTTPSConnectionPool(host='httpbin.org', port=443): Read timed out. (read timeout=10) (Failure #1)
+2025-11-29 00:41:18,664 - INFO - Monitoring stopped by user
+2025-11-29 00:41:31,046 - INFO - Starting API monitoring...
+2025-11-29 00:41:31,048 - INFO - Started monitoring: Example API
+2025-11-29 00:41:41,818 - WARNING - Example API: FAILED - HTTPSConnectionPool(host='httpbin.org', port=443): Read timed out. (read timeout=10) (Failure #1)
+2025-11-29 00:42:49,877 - INFO - Example API: OK - 8051.97ms
+2025-11-29 00:43:52,484 - INFO - Example API: OK - 2602.64ms
+2025-11-29 00:45:03,342 - WARNING - Example API: FAILED - HTTPSConnectionPool(host='httpbin.org', port=443): Read timed out. (read timeout=10) (Failure #1)
+2025-11-29 00:46:04,655 - INFO - Example API: OK - 1305.92ms
+2025-11-29 00:47:07,039 - INFO - Example API: OK - 2372.34ms
+2025-11-29 00:48:09,655 - INFO - Example API: OK - 2606.64ms
+2025-11-29 00:49:20,493 - WARNING - Example API: FAILED - HTTPSConnectionPool(host='httpbin.org', port=443): Read timed out. (read timeout=10) (Failure #1)
+2025-11-29 00:50:31,141 - WARNING - Example API: FAILED - HTTPSConnectionPool(host='httpbin.org', port=443): Read timed out. (read timeout=10) (Failure #2)
+2025-11-29 00:51:33,035 - INFO - Example API: OK - 1887.66ms
+2025-11-29 00:52:34,320 - INFO - Example API: OK - 1271.03ms
+2025-11-29 00:53:38,035 - INFO - Example API: OK - 3711.03ms
+2025-11-29 00:54:40,472 - INFO - Example API: OK - 2434.67ms
+2025-11-29 00:55:44,881 - INFO - Example API: OK - 4392.1ms
+2025-11-29 00:55:46,120 - INFO - Monitoring stopped by user
+2025-11-29 01:01:53,147 - INFO - Starting API monitoring...
+2025-11-29 01:01:53,150 - INFO - Started monitoring: Example API
+2025-11-29 02:40:08,908 - INFO - Starting API monitoring...
+2025-11-29 02:40:08,910 - INFO - Started monitoring: Example API
+2025-11-29 02:40:19,685 - WARNING - Example API: FAILED - HTTPSConnectionPool(host='httpbin.org', port=443): Read timed out. (read timeout=10) (Failure #1)
+2025-11-29 02:40:50,621 - INFO - Starting API monitoring...
+2025-11-29 02:40:50,622 - INFO - Started monitoring: Example API
+2025-11-29 02:40:53,000 - INFO - Example API: OK - 2374.35ms
+2025-11-29 02:41:20,894 - WARNING - Example API: FAILED - Expected status 200, got 503 (Failure #2)
+2025-11-29 02:41:54,148 - WARNING - Example API: FAILED - Expected status 200, got 503 (Failure #1)
+2025-11-29 02:42:22,880 - INFO - Example API: OK - 1972.72ms
+2025-11-29 02:42:56,382 - INFO - Example API: OK - 2220.38ms
+2025-11-29 02:43:25,457 - INFO - Example API: OK - 2560.92ms
+2025-11-29 02:44:06,732 - INFO - Example API: OK - 10336.54ms
+2025-11-29 02:44:36,346 - WARNING - Example API: FAILED - HTTPSConnectionPool(host='httpbin.org', port=443): Read timed out. (read timeout=10) (Failure #1)
+2025-11-29 02:45:08,482 - INFO - Example API: OK - 1731.3ms
+2025-11-29 02:45:37,563 - WARNING - Example API: FAILED - Expected status 200, got 503 (Failure #2)
+2025-11-29 02:46:09,721 - INFO - Example API: OK - 1226.31ms
+2025-11-29 02:46:40,895 - INFO - Example API: OK - 3310.05ms
+2025-11-29 02:47:11,949 - INFO - Example API: OK - 2219.91ms
+2025-11-29 02:47:45,637 - INFO - Example API: OK - 4726.49ms
+2025-11-29 02:48:14,626 - INFO - Example API: OK - 2661.73ms
+2025-11-29 02:48:47,850 - INFO - Example API: OK - 2205.24ms
+2025-11-29 02:49:16,041 - INFO - Example API: OK - 1397.56ms
+2025-11-29 02:49:49,576 - INFO - Example API: OK - 1721.25ms
+2025-11-29 02:50:18,370 - INFO - Example API: OK - 2323.15ms
+2025-11-29 02:50:23,764 - INFO - Monitoring stopped by user
+2025-11-29 02:51:24,651 - INFO - Example API: OK - 6269.62ms
+2025-11-29 02:52:27,935 - INFO - Example API: OK - 3269.39ms
+2025-11-29 02:53:29,831 - INFO - Example API: OK - 1877.61ms
+2025-11-29 02:54:31,453 - INFO - Example API: OK - 1606.56ms
+2025-11-29 02:55:33,001 - INFO - Example API: OK - 1532.74ms
+2025-11-29 02:56:37,166 - INFO - Example API: OK - 4157.36ms
+2025-11-29 02:57:41,679 - INFO - Example API: OK - 4502.16ms
+2025-11-29 02:58:44,003 - INFO - Example API: OK - 2310.2ms
+2025-11-29 02:59:54,348 - INFO - Example API: OK - 10337.18ms
+2025-11-29 03:00:57,617 - INFO - Example API: OK - 3257.28ms
+2025-11-29 03:02:00,758 - INFO - Example API: OK - 3134.59ms
+2025-11-29 03:03:02,913 - INFO - Example API: OK - 2137.6ms
+2025-11-29 03:04:05,017 - INFO - Example API: OK - 2096.57ms
