@@ -360,7 +360,7 @@ def cleanup_tasks():
     })
 
 if __name__ == '__main__':
-    print("启动接口服务，监听端口 80")
+    print("启动接口服务，监听端口 5000")
     print("可用接口:")
     print("  POST /api/run          - 执行脚本")
     print("  GET  /api/status       - 获取所有任务状态")
@@ -375,4 +375,5 @@ if __name__ == '__main__':
     print("  - 可通过请求体中的 'new_window': false 切换到简单后台模式")
     
 
-    app.run(host='0.0.0.0', port=80, debug=False)
+    app.run(host='0.0.0.0', port=5000, debug=False)
+
