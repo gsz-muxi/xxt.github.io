@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>超星学习通任务管理</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="111.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-graduation-cap"></i> 超星学习通任务管理系统</h1>
+            <div class="server-status">
+                <span class="status-label">服务器状态:</span>
+                <span id="serverStatus" class="status offline">检查中...</span>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="left-panel">
+                <section class="task-form card">
+                    <h2><i class="fas fa-rocket"></i> 启动新任务</h2>
+                    <form id="taskForm">
+                        <div class="form-group">
+                            <label for="serverUrl"><i class="fas fa-server"></i> 服务器地址</label>
+                            <select id="serverUrl" class="form-control">
+                                <option value="http://154.36.158.140:5001">远程服务器 (154.36.158.140:5000)</option>
+                                <option value="http://127.0.0.1:5000" selected>本地服务器 (127.0.0.1:5000)</option>
+                                <option value="http://localhost:5000">本地主机 (localhost:5000)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="username"><i class="fas fa-user"></i> 手机号账号</label>
+                            <input type="text" id="username" placeholder="请输入手机号" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password"><i class="fas fa-lock"></i> 登录密码</label>
+                            <input type="password" id="password" placeholder="请输入密码" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="listId"><i class="fas fa-list"></i> 课程ID列表</label>
+                            <input type="text" id="listId" placeholder="输入课程ID，多个用逗号分隔" required>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary" id="startBtn">
+                                <i class="fas fa-play"></i> 启动任务
+                            </button>
+                            <button type="button" class="btn btn-secondary" id="healthCheckBtn">
+                                <i class="fas fa-heartbeat"></i> 检查服务
+                            </button>
+                        </div>
+                    </form>
+                </section>
+
+                <section class="tasks-list card">
+                    <h2><i class="fas fa-tasks"></i> 运行中的任务</h2>
+                    <div id="runningTasks" class="tasks-container">
+                        <div class="empty-state">
+                            <i class="fas fa-clock"></i>
+                            <p>暂无运行中的任务</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="right-panel">
+                <section class="task-monitor card">
+                    <div class="monitor-header">
+                        <h2><i class="fas fa-terminal"></i> 任务监控</h2>
+                        <div class="monitor-controls">
+                            <button id="refreshBtn" class="btn-icon" title="刷新">
+                                <i class="fas fa-redo"></i>
+                            </button>
+                            <button id="clearBtn" class="btn-icon" title="清空">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                            <div class="auto-refresh">
+                                <input type="checkbox" id="autoRefresh">
+                                <label for="autoRefresh">自动刷新(5秒)</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="monitor-tabs">
+                        <button class="tab-btn active" data-tab="output">实时输出</button>
+                        <button class="tab-btn" data-tab="tasks">任务列表</button>
+                        <button class="tab-btn" data-tab="status">状态详情</button>
+                    </div>
+                    
+                    <div class="tab-content active" id="outputTab">
+                        <div class="output-container">
+                            <div id="taskOutput" class="output-window">
+                                <div class="output-placeholder">
+                                    <i class="fas fa-code"></i>
+                                    <p>选择任务查看输出</p>
+                                </div>
+                            </div>
+                            <div class="output-controls">
+                                <div class="output-filter">
+                                    <label>
+                                        <input type="radio" name="outputType" value="all" checked> 全部
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="outputType" value="stdout"> 仅输出
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="outputType" value="stderr"> 仅错误
+                                    </label>
+                                </div>
+                                <div class="output-info">
+                                    <span id="outputCount">0 条输出</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="tasksTab">
+                        <div id="tasksTableContainer">
+                            <table class="tasks-table">
+                                <thead>
+                                    <tr>
+                                        <th>任务ID</th>
+                                        <th>状态</th>
+                                        <th>开始时间</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tasksTableBody">
+                                    <tr>
+                                        <td colspan="4" class="empty-cell">暂无任务数据</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="statusTab">
+                        <div id="statusDetails" class="status-details">
+                            <div class="empty-state">
+                                <i class="fas fa-info-circle"></i>
+                                <p>选择任务查看状态详情</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="system-info card">
+                    <h2><i class="fas fa-info-circle"></i> 系统信息</h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">活动任务:</span>
+                            <span id="activeTasks" class="info-value">0</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">总任务数:</span>
+                            <span id="totalTasks" class="info-value">0</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">最后更新:</span>
+                            <span id="lastUpdate" class="info-value">--:--:--</span>
+                        </div>
+                    </div>
+                    <button id="cleanupBtn" class="btn btn-warning">
+                        <i class="fas fa-broom"></i> 清理旧任务
+                    </button>
+                </section>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>超星学习通任务管理系统 &copy; 2023 | API端口: 5000 | 支持多任务并发执行</p>
+        </footer>
+    </div>
+
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="111.js"></script>
+</body>
+</html>
